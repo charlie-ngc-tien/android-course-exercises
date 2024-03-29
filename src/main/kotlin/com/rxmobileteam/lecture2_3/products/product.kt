@@ -44,13 +44,9 @@ fun List<Order>.partitionDeliveredAndNotDelivered(): Pair<List<Order>, List<Orde
 
 // TODO: Return a map of product to count of this product in the orders
 // eg. [Product1 -> 2, Product2 -> 1, Product3 -> 3]
-fun List<Order>.countOfEachProduct(): Map<Product, Int> {
-  val setProduct = getProductsSet()
-  val productList = getProductsList()
-  return buildMap {
-    setProduct.forEach {
-      put(it, productList.count { product -> it == product })
-    }
+fun List<Order>.countOfEachProduct(): Map<Product, Int> = buildMap {
+  getProductsList().forEach {
+    put(it, getOrDefault(it, 0) + 1)
   }
 }
 
