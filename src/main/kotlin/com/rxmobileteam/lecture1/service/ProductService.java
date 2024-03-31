@@ -41,7 +41,7 @@ public class ProductService {
         return productDao
             .findAll()
             .stream()
-            .filter(product -> product.getName().equalsIgnoreCase(query) || product.getDescription().equalsIgnoreCase(query))
+            .filter(product -> product.getName().toLowerCase().contains(query) || product.getDescription().toLowerCase().contains(query))
             .collect(Collectors.toList());
     }
 }
