@@ -57,4 +57,12 @@ public class Product {
             ", price=" + price +
             '}';
     }
+
+    public @NotNull String getName() {
+        return name;
+    }
+
+    public @NotNull String getDescription() {
+        return description;
+    }
 }

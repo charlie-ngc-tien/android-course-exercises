@@ -4,6 +4,8 @@ import com.rxmobileteam.lecture1.factory.ProductServiceFactory;
 import com.rxmobileteam.lecture1.service.Product;
 import com.rxmobileteam.lecture1.service.ProductService;
 
+import java.util.List;
+
 public class Exercise1Main {
     public static void main(String[] args) {
         ProductService productService = new ProductServiceFactory().createProductService();
@@ -46,5 +48,12 @@ public class Exercise1Main {
         productService.addProduct(iPhone12Pro);
         productService.addProduct(samsungGalaxyS21);
         productService.addProduct(samsungGalaxyS21Ultra);
+
+        List<Product> searchProducts = productService.searchProducts("Samsung Galaxy S21");
+        System.out.println("search Samsung Galaxy S21");
+        for (Product product: searchProducts) {
+            System.out.println(product);
+        }
     }
 }
+
