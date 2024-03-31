@@ -20,7 +20,7 @@ class Fraction private constructor(
   val denominator: Int,
 ) : Comparable<Fraction> {
   // TODO: Implement the decimal value of the fraction
-  val decimal: Double = numerator.toDouble() / denominator
+  val decimal: Double get() = numerator.toDouble() / denominator
 
   init {
     // TODO: Check validity of numerator and denominator (throw an exception if invalid)
